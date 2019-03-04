@@ -1,0 +1,10 @@
+# docker-compose.yml
+version: '2.2'
+services:
+  web:
+    image: aspendigital/octobercms
+    ports:
+      - 8080:80
+    volumes:
+      - $PWD/plugins:/var/www/html/plugins
+      - $PWD/themes:/var/www/html/themes
