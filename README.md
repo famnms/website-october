@@ -1,25 +1,22 @@
-# Installation wizard for October
+# FAMNMS Website
+## October CMS Edition
 
-The wizard installation is a recommended way to install October. It is simpler than the command-line installation and doesn't require any special skills.
+This repository contains source for the custom theme and plugins developed
+for the FAMNMS website. It does not contain sources for the frontend pages
+within the FAMNMS website, as those are environment specific and not best
+suited for a Git repository.
 
-1. Prepare a directory on your server that is empty. It can be a sub-directory, domain root or a sub-domain.
-1. [Download the installer archive file](https://github.com/octobercms/install/archive/master.zip).
-1. Unpack the installer archive to the prepared directory.
-1. Grant writing permissions on the installation directory and all its subdirectories and files.
-1. Navigate to the install.php script in your web browser.
-1. Follow the installation instructions.
+### FAMNMS-2019 Theme
+Based on Bootstrap 3 (soon to be Semantic UI) and Flat UI. Customized to use
+a dark theme.
 
-## Minimum System Requirements
+### Plugins
+#### Members
+Handles members of FAMNMS, including personal information. This is extended
+in other plugins to add functionality
 
-October CMS has a few system requirements:
-
-* PHP version 7.0 or higher
-* PDO PHP Extension
-* cURL PHP Extension
-* OpenSSL PHP Extension
-* Mbstring PHP Library
-* ZipArchive PHP Library
-* GD PHP Library
-
-As of PHP 5.5, some OS distributions may require you to manually install the PHP JSON extension.
-When using Ubuntu, this can be done via ``apt-get install php5-json``.
+#### Events
+Handles events at FAMNMS. Capable of tracking registrations and attendance.
+Members can register for an event using their frontend account and can mark
+themselves as in attendance using a code given at an event. Both of these
+actions can also be performed by the leadership team in the backend.
