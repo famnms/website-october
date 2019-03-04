@@ -1,0 +1,53 @@
+fields:
+    title:
+        label: Title
+        span: left
+        required: 1
+        type: text
+    event_type:
+        label: 'Event Type'
+        nameFrom: short_name
+        descriptionFrom: long_name
+        emptyOption: 'Select Event Type'
+        span: right
+        required: 1
+        type: relation
+    start_time:
+        label: 'Start Time'
+        mode: datetime
+        span: auto
+        required: 1
+        type: datepicker
+    end_time:
+        label: 'End Time'
+        mode: datetime
+        span: auto
+        required: 1
+        type: datepicker
+    description:
+        label: Description
+        size: large
+        span: full
+        stretch: 0
+        type: richeditor
+    contact:
+        label: 'FAMNMS Contact'
+        nameFrom: full_name
+        descriptionFrom: email
+        span: auto
+        type: relation
+        commentAbove: 'Only administrators are listed here'
+tabs:
+    fields:
+        track_sign_ups:
+            label: 'Track Registrations'
+            span: full
+            type: switch
+            comment: 'Whether to allow members to sign up to attend this event ahead of time. Useful for volunteering events where transportation must be arranged.'
+            tab: 'Track Registrations'
+        track_attendance:
+            label: 'Track Attendance'
+            span: full
+            type: switch
+            comment: 'Whether to allow members to sign in as attending this event. Useful for meetings.'
+            tab: 'Track Attendance'

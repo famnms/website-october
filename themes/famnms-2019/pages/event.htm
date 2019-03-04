@@ -1,0 +1,37 @@
+title = "Event"
+url = "/event/:id"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use Famnms\Events\Models\Event;
+function onStart() {
+    try {
+        $this["event"] = Event::findOrFail($this->param("id"));
+    } catch (Exception $e) {
+        $this->setStatusCode(404);
+        return $this->controller->run('404');
+    }
+}
+?>
+==
+<div class="container" style="margin-top: 10px;">
+    <h4>{{event.title}}</h4>
+    <b>Event Type:</b> {{event.event_type.long_name}}
+    
+    <br />
+    
+    <b>From:</b> {{event.start_time|date("D, M d, Y g:i a")}}
+    
+    <br />
+    
+    <b>To:</b> {{event.end_time|date("D, M d, Y g:i a")}}
+    
+    <br /><br />
+    
+    <span>{{event.description|raw}}</span>
+    
+    <br /><br />
+    
+    Contact <a href="mailto:{{event.contact.email}}">{{event.contact.full_name}}</a> with any questions.
+</div>

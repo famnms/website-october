@@ -1,0 +1,11 @@
+name: Event
+modelClass: Famnms\Events\Models\Event
+form: $/famnms/events/models/event/fields.yaml
+defaultRedirect: famnms/events/event
+create:
+    redirect: 'famnms/events/event/update/:id'
+    redirectClose: famnms/events/event
+update:
+    redirect: famnms/events/event
+    redirectClose: famnms/events/event
+preview: {  }

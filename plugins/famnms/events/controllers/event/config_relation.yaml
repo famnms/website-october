@@ -1,0 +1,8 @@
+eventtype:
+    label: Event Type
+    view:
+        form: $/famnms/event/models/eventtype/fields.yaml
+        toolbarButtons: update|delete|create
+    manage:
+        form: $/famnms/event/models/eventtype/fields.yaml
+        list: $/famnms/event/models/eventtype/columns.yaml

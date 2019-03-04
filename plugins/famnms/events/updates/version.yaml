@@ -1,0 +1,26 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table famnms_events_event'
+    - builder_table_create_famnms_events_event.php
+1.0.3:
+    - 'Updated table famnms_events_event'
+    - builder_table_update_famnms_events_event.php
+1.0.4:
+    - 'Created table famnms_events_event_type'
+    - builder_table_create_famnms_events_event_type.php
+1.0.5:
+    - 'Updated table famnms_events_event'
+    - builder_table_update_famnms_events_event_2.php
+1.0.6:
+    - 'Updated table famnms_events_event_type'
+    - builder_table_update_famnms_events_event_type.php
+1.0.7:
+    - 'Updated table famnms_events_event'
+    - builder_table_update_famnms_events_event_3.php
+1.0.8:
+    - 'Updated table famnms_events_event'
+    - builder_table_update_famnms_events_event_4.php
+1.0.9:
+    - 'Updated table famnms_events_event'
+    - builder_table_update_famnms_events_event_5.php

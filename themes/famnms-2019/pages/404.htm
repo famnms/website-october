@@ -1,0 +1,42 @@
+title = "Page not found (404)"
+url = "/404"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function get_action($ACTIONS) {
+    try {
+        return $ACTIONS[array_rand($ACTIONS)];
+    } catch (Exception $e) {
+        return "Even worse, the witty error generator is broken!";
+        throw $e;
+    }
+}
+
+function onStart() {
+    $ACTIONS = array(
+        "Try changing random things in the URL until it works.",
+        "Try turning the internet off and on again.",
+        "Try blaming whoever isn't the webmaster.",
+    );
+    
+    $this["action"] = $this->get_action($ACTIONS);
+}
+?>
+==
+<div class="jumbotron" style="background-color: unset;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2 text-center">
+                <br />
+                <img src="{{ 'assets/images/logo.svg'|theme }}" alt="">
+            </div>
+            <div class="col-xs-10">
+                <h1>You appear to be lost...</h1>
+                <p>Sorry, but the page you requested <em>cannot be found</em> here.</p>
+                <p>{{action}}</p>
+                <p><small><em>Error code: 404</em></small>
+            </div>
+        </div>
+    </div>
+</div>

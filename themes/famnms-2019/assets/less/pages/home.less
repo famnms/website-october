@@ -1,0 +1,110 @@
+.home-title {
+    background: @body-bg;
+    background-image: url('../images/hero.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: white;
+    position: relative;
+    h3 {
+        font-size: 33px;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .additional-links {
+        .opacity(50);
+        font-size: 12px;
+        color: @text-color;
+        a {
+            text-decoration: underline;
+            color: @text-color;
+            &:hover, &:focus, &.active {
+                color: mix(@text-color, black, 80%);
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        padding-top:68px;
+        padding-bottom:70px;
+        .player {
+            margin: 40px 0 45px;
+        }
+    }
+    @media (max-width: 480px) {
+        padding-top:68px;
+        padding-bottom:70px;
+        h3 {
+            font-size: 26px;
+        }
+        .player {
+            margin: 40px 0 45px;
+        }
+    }
+    
+    .player {
+        border-radius: 6px;
+        background: @text-color;
+        position: relative;
+        overflow: hidden;
+        height: 360px;
+        .btn-play {
+            .box-sizing(border-box);
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 60px;
+            padding-left: 16px;
+            border-radius: 3px;
+            &.btn-primary {
+                background-color: @btn-primary-active-bg;
+
+                &:hover, &:focus {
+                    background-color: mix(@btn-primary-active-bg, white, 80%);
+                }
+
+                &:active, &.active {
+                    background-color: mix(@btn-primary-active-bg, black, 85%);
+                }
+            }
+        }
+        > iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 480px) {
+            height: 160px;
+        }
+    }
+}
+
+// UPCOMING EVENTS
+// ----------------------
+
+.upcoming-events {
+    padding-bottom: 21px;
+    .event {
+        margin-bottom: 15px;
+    }
+    .event > i {
+        float: left;
+        margin-right: 15px;
+        color: @text-color;
+        font-size: 200%;
+    }
+    .event > a {
+        overflow: hidden;
+        color: @text-color;
+        text-decoration: none !important;
+    }
+    .event > a > .date {
+        display: block;
+        font-size: 0.8em;
+    }
+}

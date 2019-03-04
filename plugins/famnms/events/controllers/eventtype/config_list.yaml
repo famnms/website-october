@@ -1,0 +1,12 @@
+title: EventType
+modelClass: Famnms\Events\Models\EventType
+list: $/famnms/events/models/eventtype/columns.yaml
+recordUrl: 'famnms/events/eventtype/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

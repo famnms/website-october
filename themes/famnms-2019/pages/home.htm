@@ -1,0 +1,45 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[eventOverview]
+==
+<?php
+function onStart() {
+    $this['events'] = array(array('title' => 'Event 1', 'date' => 'February 3<sup>rd</sup>, 2019'));
+}
+?>
+==
+<section class="home-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2><i>FIRST</i> Alumni and Mentors Network at Michigan State</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br />
+
+<div class="container">
+
+    <!-- Mission Statement -->
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <h5 class="headline"><span>FAMNMS Is Ready To Make a Difference</span></h5>
+                <p>
+                Hello and welcome to FAMNMS' website. Our goal is to connect <i>FIRST</i> Alumni and Mentors at Michigan State/in the Lansing region to FRC and the teams. We hope to encourage and grow the presence of <i>FIRST</i> in the Lansing area. On this website you can find lots of resources and also how to become a volunteer through FAMNMS, or even a mentor. We are always looking for new members and welcome everyone, not just <i>FIRST</i> Alumni. If you have any questions, please don't be afraid to contact us and we will try and get back to you right away. If you'd like to know more about FAMNMS, please venture to the About page to learn all about us!
+                </p>
+                <h5 class="headline"><span>What is <i>FIRST</i>?</span></h5>
+                <p>The mission of <i>FIRST</i> is to inspire young people to be science and technology leaders, by engaging them in exciting Mentor-based programs that build science, engineering, and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership. Currently in Michigan, there are over 2500 teams, making <i>FIRST</i> in Michigan the largest district out of all the other regions and districts in the world.</p>
+        </div>
+            <!-- Upcoming Events -->
+        <div class="upcoming-events col-md-4">
+            <h4 class="headline"><span>Upcoming Events</span></h4>
+            {% component 'eventOverview' %}
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+plugin:
+    name: 'famnms.events::lang.plugin.name'
+    description: 'famnms.events::lang.plugin.description'
+    author: FAMNMS
+    icon: oc-icon-calendar
+    homepage: ''
+navigation:
+    events:
+        label: Events
+        url: famnms/events/event
+        icon: icon-calendar
+        sideMenu:
+            events:
+                label: 'famnms.events::lang.plugin.name'
+                url: famnms/events/event
+                icon: icon-calendar
+            eventTypes:
+                label: 'Event Types'
+                url: famnms/events/eventtype
+                icon: icon-tag

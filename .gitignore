@@ -1,0 +1,11 @@
+artisan
+bootstrap/*
+modules/*
+config/*
+storage/*
+vendor/*
+index.php
+plugins/*
+!plugins/famnms/
+themes/*
+!themes/famnms*/
