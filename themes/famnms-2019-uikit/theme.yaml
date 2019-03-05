@@ -1,0 +1,9 @@
+name: 'FAMNMS 2019 - UIKit'
+title: 'FAMNMS'
+description: 'UIKit 3 Fork'
+author: 'Evan Lihou'
+homepage: 'https://evanlihou.com'
+code: famnms-2019-uikit
+previewImage: assets/theme-preview.png
+require:
+    - Ompmega.MixHelper

@@ -4,9 +4,9 @@
 		{% if event.event_type.is_public or __SELF__.backendUser %}
 			<div class="event">
 				<i class="fa fa-calendar"></i>
-				<a href="/event/{{event["id"]}}">
+				<a href="/event/{{event['id']}}">
 					{{event["title"]}} ({{event.event_type["short_name"]}})
-					<span class="date">{{event["start_time"]|date('M d, Y')}}</span>
+					<span class="date">{{event["start_time"]|date('M d, Y', __self__.property('timezone'))}}</span>
 				</a>
 			</div>
 		{% endif %}

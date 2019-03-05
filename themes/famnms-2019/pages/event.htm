@@ -2,36 +2,47 @@ title = "Event"
 url = "/event/:id"
 layout = "default"
 is_hidden = 0
+
+[eventDetail eventDetail2]
+timezone = "America/Detroit"
+event_id = "{{ :id }}"
 ==
 <?php
-use Famnms\Events\Models\Event;
 function onStart() {
-    try {
-        $this["event"] = Event::findOrFail($this->param("id"));
-    } catch (Exception $e) {
-        $this->setStatusCode(404);
-        return $this->controller->run('404');
-    }
+    $this->page["timezone"] = 'America/Detroit';
 }
 ?>
 ==
 <div class="container" style="margin-top: 10px;">
     <h4>{{event.title}}</h4>
-    <b>Event Type:</b> {{event.event_type.long_name}}
     
-    <br />
-    
-    <b>From:</b> {{event.start_time|date("D, M d, Y g:i a")}}
-    
-    <br />
-    
-    <b>To:</b> {{event.end_time|date("D, M d, Y g:i a")}}
-    
-    <br /><br />
-    
-    <span>{{event.description|raw}}</span>
-    
-    <br /><br />
-    
-    Contact <a href="mailto:{{event.contact.email}}">{{event.contact.full_name}}</a> with any questions.
+    <div class="row">
+        <div id="event-details" class="col-md-8 col-sm-12">
+            <b>Event Type:</b> {{event.event_type.long_name}}
+        
+            <br />
+        
+            <b>From:</b> {{event.start_time|date("D, M d, Y g:i a", this.page.timezone)}}
+            {{timezone}}
+        
+            <br />
+        
+            <b>To:</b> {{event.end_time|date("D, M d, Y g:i a", this.page.timezone)}}
+        
+            <br />
+        
+            <b>Description: </b><br /><span>{{event.description|raw}}</span>
+            
+            <br />
+            <span>Contact <a href="mailto:{{event.contact.email}}">{{event.contact.full_name}}</a> with any questions.</span>
+        </div>
+        {% if event.agenda %}
+            <div id="event-agenda" class="col-md-4 col-sm-12">
+                <h5>Agenda</h5>
+                {% for agendaItem in eventDetail2.agenda_times() %}
+                    <div>{{agendaItem.topic}} <small>- {{agendaItem.start_time|date('g:i', this.page.timezone)}}</small></div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 </div>

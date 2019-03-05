@@ -1,0 +1,62 @@
+==
+{##}
+{# Note: only one level of sublinks are supported #}
+{% set
+    links = {
+        'home': {
+            name: 'Home',
+            icon: 'home'
+        },
+        'member': {
+            name: 'Member',
+            icon: 'users',
+            sublinks: {
+                '404': {
+                    icon: 'pagekit',
+                    name: 'TODO',
+                    sublinks: {
+                        '404': {
+                            icon: 'pagekit',
+                            name: 'TODO'
+                        }
+                    }
+                }
+            },
+        }
+    }
+%}
+
+{% macro render_menu(links, currentPage) %}
+    {% import _self as subnav %}
+    {% for code, link in links %}
+        <li class="{{code == currentPage ? 'uk-active' }}">
+            <a href="{{ code|page }}">
+                {% if link.icon %}
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: {{ link.icon }}"></span>
+                {% endif %}
+                {{ link.name }}
+            </a>
+            {% if link.sublinks %}
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        {{ subnav.render_menu(link.sublinks, currentPage) }}
+                    </ul>
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% import _self as nav %}
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="{{ 'home' | page }}">
+            {{ this.theme.config.title }}
+        </a>
+    </div>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            {{ nav.render_menu(links, this.page.id) }}
+        </ul>
+    </div>
+</nav>

@@ -4,12 +4,7 @@ layout = "default"
 is_hidden = 0
 
 [eventOverview]
-==
-<?php
-function onStart() {
-    $this['events'] = array(array('title' => 'Event 1', 'date' => 'February 3<sup>rd</sup>, 2019'));
-}
-?>
+timezone = "America/Detroit"
 ==
 <section class="home-title">
     <div class="container">
@@ -36,7 +31,7 @@ function onStart() {
                 <p>The mission of <i>FIRST</i> is to inspire young people to be science and technology leaders, by engaging them in exciting Mentor-based programs that build science, engineering, and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership. Currently in Michigan, there are over 2500 teams, making <i>FIRST</i> in Michigan the largest district out of all the other regions and districts in the world.</p>
         </div>
             <!-- Upcoming Events -->
-        <div class="upcoming-events col-md-4">
+        <div class="upcoming-events col-sm-12 col-md-4">
             <h4 class="headline"><span>Upcoming Events</span></h4>
             {% component 'eventOverview' %}
         </div>

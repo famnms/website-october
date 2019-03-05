@@ -8,4 +8,5 @@ index.php
 plugins/*
 !plugins/famnms/
 themes/*
-!themes/famnms*/
+!themes/famnms-2019/
+!themes/famnms-2019-uikit/

@@ -9,6 +9,8 @@ navigation:
         label: Events
         url: famnms/events/event
         icon: icon-calendar
+        permissions:
+            - can_view_events
         sideMenu:
             events:
                 label: 'famnms.events::lang.plugin.name'
@@ -18,3 +20,13 @@ navigation:
                 label: 'Event Types'
                 url: famnms/events/eventtype
                 icon: icon-tag
+permissions:
+    can_create_events:
+        tab: 'famnms.events::lang.plugin.name'
+        label: 'Can Create Events'
+    can_view_events:
+        tab: 'famnms.events::lang.plugin.name'
+        label: 'Can View Events'
+    can_create_event_types:
+        tab: 'famnms.events::lang.plugin.name'
+        label: 'Can Create Event Types'

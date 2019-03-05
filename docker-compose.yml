@@ -8,3 +8,4 @@ services:
     volumes:
       - $PWD/plugins:/var/www/html/plugins
       - $PWD/themes:/var/www/html/themes
+      - $PWD/config:/var/www/html/config

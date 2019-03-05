@@ -17,7 +17,14 @@ class EventOverview extends ComponentBase
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'timezone' => [
+                'title' => 'Timezone',
+                'description' => 'The PHP timezone to display event times in',
+                'default' => 'America/Detroit',
+                'type' => 'string'
+            ]
+        ];
     }
 
     function upcomingEvents() {

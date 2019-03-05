@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table famnms_members_member'
+    - builder_table_create_famnms_members_member.php

@@ -1,5 +1,24 @@
 description = "Default layout"
 ==
+<?php
+function onStart() {
+    $sitewideNotification = [
+        'enabled' => true, // True/false
+        'severity' => 'high', // High/medium/low => red/orange/yellow
+        'message' => 'Tonight\'s meeting is cancelled.', // Message
+        'take_down' => '2019-03-02 19:00' // yyyy-mm-dd hh:mm -- 24-hour time
+    ];
+    
+    $takeDownDate = DateTime::createFromFormat('Y-m-d H:i', $sitewideNotification["take_down"]);
+    if ($sitewideNotification["enabled"] && $takeDownDate > now()) {
+        $this["sitewide_notification"] = [
+            'severity' => $sitewideNotification["severity"],
+            'message' => $sitewideNotification["message"]
+        ];
+    }
+}
+?>
+==
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,8 +43,13 @@ description = "Default layout"
 			]|theme }}"></script>
 		<![endif]-->
     </head>
-    <body class="page-{{ this.page.id }} layout-{{ this.layout.id }}">
-
+    <body class="page-{{ this.page.id }} layout-{{ this.layout.id }} {{ (sitewide_notification) ? "sitewide-notif" : "" }}">
+        {% if sitewide_notification %}
+            <!-- Sitewide Notification -->
+            <div class="sitewide-notification {{sitewide_notification.severity}}">
+                <p>{{sitewide_notification.message}}</p>
+            </div>
+        {% endif %}
         <!-- Header -->
         <header id="layout-header" class="header-navbar">
             <!-- Nav -->
@@ -34,6 +58,14 @@ description = "Default layout"
 
         <!-- Content -->
         <div id="layout-content">
+            {# Only show header if not homepage #}
+            {% if this.page.id != 'home' %}
+            <section id="layout-title">
+                <div class="container">
+                    <h3>{{this.page.title}}</h3>
+                </div>
+            </section>
+            {% endif %}
             {% page %}
         </div>
 

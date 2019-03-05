@@ -51,3 +51,20 @@ tabs:
             type: switch
             comment: 'Whether to allow members to sign in as attending this event. Useful for meetings.'
             tab: 'Track Attendance'
+        agenda:
+            label: 'Agenda Items'
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            commentAbove: 'If an agenda is not required for this event, just leave everything blank'
+            tab: Agenda
+            form:
+                fields:
+                    topic:
+                        label: Topic
+                        span: auto
+                        type: text
+                    num_minutes:
+                        label: 'Approx. Minutes'
+                        span: auto
+                        type: number

@@ -1,0 +1,17 @@
+// Variables
+// =================================================
+
+$global-color: #ccc;
+$global-background: #222;
+$global-muted-background: lighten($global-background, 10%);
+$global-emphasis-color: darken($global-color, 15%);
+$global-link-color: darken($global-color, 20%);
+
+$navbar-nav-item-active-color: lighten($global-muted-background, 75%);
+
+$navbar-dropdown-background: $global-muted-background;
+$navbar-dropdown-padding: 10px;
+$navbar-dropdown-margin: 5px;
+
+// Import last
+@import "~uikit/src/scss/variables-theme"; // Theme

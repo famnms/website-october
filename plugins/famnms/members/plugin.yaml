@@ -1,0 +1,6 @@
+plugin:
+    name: 'famnms.members::lang.plugin.name'
+    description: 'famnms.members::lang.plugin.description'
+    author: FAMNMS
+    icon: oc-icon-users
+    homepage: ''

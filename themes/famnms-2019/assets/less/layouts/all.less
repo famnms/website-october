@@ -22,7 +22,7 @@ header#layout-header {
 }
 
 #layout-title {
-    background-color: mix(@brand-primary, @inverse, 9%);
+    background-color: lighten(@body-bg, 30%);
     padding-top: 20px;
     padding-bottom: 30px;
     margin-bottom: 20px;
@@ -44,3 +44,45 @@ header#layout-header {
     }
 }
 
+@sitewide-notification-height: 60px;
+
+body.sitewide-notif {
+    margin-top: @sitewide-notification-height;
+    nav.navbar-fixed-top {
+        top: @sitewide-notification-height;
+    }
+}
+
+.sitewide-notification {
+    display: flex;
+    text-align: center;
+    padding: 0 5%;
+    height: @sitewide-notification-height;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: @gray-dark;
+}
+
+.sitewide-notification.high {
+    background: #FF4136;
+    color: @text-color;
+}
+
+.sitewide-notification.medium {
+    background: #FF851B;
+}
+
+.sitewide-notification.low {
+    background: #FFDC00;
+}
+
+.sitewide-notification p {
+    margin: auto;
+}
+
+.site-notif-pad {
+    padding-bottom: @sitewide-notification-height;
+}

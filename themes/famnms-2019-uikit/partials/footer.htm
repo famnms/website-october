@@ -1,0 +1,44 @@
+==
+{##}
+
+{# Note: This menu does not support sublinks #}
+{% set
+    links = {
+        'About': 'about',
+        'icon: facebook': 'https://facebook.com/famnms',
+        'icon: instagram': 'https://instagram.com/famnms'
+    }
+%}
+
+{% macro render_menu(links) %}
+    {% for title, link in links %}
+        <li>
+            {% set l = ('https://' in link or 'http://' in link) ? link : link|page %}
+            {% if 'icon: ' in title %}
+                <a href="{{ l }}" uk-icon="{{ title }}"></a>
+            {% else %}
+                <a href="{{ l }}">
+                    {{ title }}
+                </a>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% import _self as footer %}
+<footer class="uk-margin">
+    <div class="uk-container">
+        <div class="uk-grid uk-grid-divider uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+                <p class="uk-text-meta">&copy; 2019 {{ this.theme.config.title }}</p>
+            </div>
+            <div class="uk-width-expand">
+                <nav class="footer-nav">
+                    <ul class="uk-subnav uk-margin-remove-bottom">
+                        {{ footer.render_menu(links) }}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>

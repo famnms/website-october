@@ -11,7 +11,9 @@ class Event extends Model
     
     use \October\Rain\Database\Traits\SoftDelete;
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
+    protected $jsonable = ['agenda'];
 
 
     /**
@@ -31,5 +33,10 @@ class Event extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'start_time' => 'required|date',
+        'end_time' => 'required|date|after:start_time',
+        'title' => 'required|max:255',
+        'event_type_id' => 'required|exists:famnms_events_event_type,id',
+        'contact_id' => 'required|exists:backend_users,id'
     ];
 }
