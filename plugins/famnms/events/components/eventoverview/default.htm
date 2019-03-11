@@ -3,10 +3,10 @@
 		{% for event in __SELF__.upcomingEvents %}
 		{% if event.event_type.is_public or __SELF__.backendUser %}
 			<div class="event">
-				<i class="fa fa-calendar"></i>
+				<span class="uk-icon" uk-icon="icon: calendar; ratio: 3"></span>
 				<a href="/event/{{event['id']}}">
 					{{event["title"]}} ({{event.event_type["short_name"]}})
-					<span class="date">{{event["start_time"]|date('M d, Y', __self__.property('timezone'))}}</span>
+					<div class="date">{{event["start_time"]|date('M d, Y', __self__.property('timezone'))}}</div>
 				</a>
 			</div>
 		{% endif %}
