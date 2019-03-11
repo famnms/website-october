@@ -11,15 +11,9 @@
             name: 'Member',
             icon: 'users',
             sublinks: {
-                '404': {
+                'home': {
                     icon: 'pagekit',
                     name: 'TODO',
-                    sublinks: {
-                        '404': {
-                            icon: 'pagekit',
-                            name: 'TODO'
-                        }
-                    }
                 }
             },
         }
@@ -51,12 +45,15 @@
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="{{ 'home' | page }}">
-            {{ this.theme.config.title }}
+            <b>{{ this.theme.config.title }}</b>
         </a>
-    </div>
-    <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
             {{ nav.render_menu(links, this.page.id) }}
         </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <div class="uk-navbar-item">
+            <a href="{{ 'page' |page }}" class="uk-button uk-button-default">Sign in</a>
+        </div>
     </div>
 </nav>
