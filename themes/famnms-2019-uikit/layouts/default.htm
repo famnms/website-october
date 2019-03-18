@@ -18,10 +18,13 @@ function onStart() {
 }
 ?>
 ==
+{##}
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{{ this.page.title }} | {{ this.theme.config.title }}</title>
+        <title>{% placeholder title default %}
+            {{ this.page.title }}
+        {% endplaceholder %} | {{ this.theme.config.title }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="title" content="{{ this.page.meta_title }}">

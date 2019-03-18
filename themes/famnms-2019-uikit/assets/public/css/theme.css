@@ -12020,3 +12020,9 @@ h3 {
     page-break-after: avoid;
   }
 }
+a.no-link-color {
+  color: #ccc;
+}
+a.no-link-color:hover {
+  color: #ccc;
+}

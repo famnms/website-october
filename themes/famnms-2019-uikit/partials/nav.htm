@@ -20,10 +20,10 @@
     }
 %}
 
-{% macro render_menu(links, currentPage) %}
+{% macro render_menu(links, currentPage, mobile) %}
     {% import _self as subnav %}
     {% for code, link in links %}
-        <li class="{{code == currentPage ? 'uk-active' }}">
+        <li class="{{code == currentPage ? 'uk-active' }} {{(mobile and link.sublinks) ? 'uk-parent'}}">
             <a href="{{ code|page }}">
                 {% if link.icon %}
                 <span class="uk-icon uk-margin-small-right" uk-icon="icon: {{ link.icon }}"></span>
@@ -31,24 +31,31 @@
                 {{ link.name }}
             </a>
             {% if link.sublinks %}
+                {% if mobile %}
+                <ul class="uk-nav-sub">
+                    {{subnav.render_menu(link.sublinks, currentpage, mobile)}}
+                </ul>
+                {% else %}
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        {{ subnav.render_menu(link.sublinks, currentPage) }}
+                        {{ subnav.render_menu(link.sublinks, currentPage, mobile) }}
                     </ul>
                 </div>
+                {% endif %}
             {% endif %}
         </li>
     {% endfor %}
 {% endmacro %}
 
 {% import _self as nav %}
-<nav class="uk-navbar-container" uk-navbar>
+<!-- Desktop nav -->
+<nav class="uk-navbar-container uk-visible@m" uk-navbar>
     <div class="uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="{{ 'home' | page }}">
             <b>{{ this.theme.config.title }}</b>
         </a>
         <ul class="uk-navbar-nav">
-            {{ nav.render_menu(links, this.page.id) }}
+            {{ nav.render_menu(links, this.page.id, false) }}
         </ul>
     </div>
     <div class="uk-navbar-right">
@@ -57,3 +64,28 @@
         </div>
     </div>
 </nav>
+
+<!-- Mobile nav -->
+<nav class="uk-navbar-container uk-hidden@m" uk-navbar>
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="{{ 'home' | page }}">
+            <b>{{ this.theme.config.title }}</b>
+        </a>
+    </div>
+    <div class="uk-navbar-right">
+        <button class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #mobile-nav"></button>
+    </div>
+</nav>
+
+<div id="mobile-nav" uk-offcanvas="overlay: true; flip: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+        <ul class="uk-nav uk-nav-primary uk-nav-parent-icon" uk-nav>
+            {{ nav.render_menu(links, this.page.id, true) }}
+        </ul>
+        <div class="uk-navbar-item uk-margin-auto-top">
+            <a href="{{ 'page' |page }}" class="uk-button uk-button-default">Sign in</a>
+        </div>
+
+    </div>
+</div>

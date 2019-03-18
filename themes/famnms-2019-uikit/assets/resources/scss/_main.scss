@@ -1,2 +1,9 @@
 // Custom styles
 // =================================================
+
+a.no-link-color {
+    color: $global-color;
+    &:hover {
+        color: $global-color;
+    }
+}
