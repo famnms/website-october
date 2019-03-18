@@ -45,6 +45,7 @@ class EventDetail extends ComponentBase
         foreach ($agendaItems as $item) {
             $new_item = &$agenda_with_times[];
             $new_item['topic'] = $item['topic'];
+            $new_item['details'] = $item['details'];
             $new_item['start_time'] = $time->toDateTimeString();
             $minutes = $item['num_minutes'];
             if ($minutes) {

@@ -1,0 +1,71 @@
+title = "Event Agenda"
+url = "/event/agenda/:id"
+layout = "default"
+is_hidden = 1
+
+[eventDetail]
+event_id = "{{ :id }}"
+==
+<?php
+function onStart() {
+    $this->page["timezone"] = 'America/Detroit';
+}
+
+function onSignUp() {
+    return input("name");
+}
+?>
+==
+{##}
+{# Set page title #}
+{% put title %}
+    Event Agenda: {{ event.title }}
+{% endput %}
+<div class="uk-container">
+    <h2>{{event.title}}</h2>
+    <div id="event-details">
+        <b>Event Type:</b> {{event.event_type.long_name}}
+    
+        <br />
+    
+        <b>From:</b> {{event.start_time|date("D, M d, Y g:i a", this.page.timezone)}}
+        {{timezone}}
+    
+        <br />
+    
+        <b>To:</b> {{event.end_time|date("D, M d, Y g:i a", this.page.timezone)}}
+    
+        <br />
+    
+        <b>Description: </b><br /><span>{{event.description|raw}}</span>
+        
+        <br />
+    </div>
+    {% if event.agenda %}
+        <div id="event-agenda">
+            <h3>Agenda</h3>
+            {% for agendaItem in eventDetail.agenda_times() %}
+                <div class="uk-margin-bottom">
+                    <span class="uk-text-large">{{agendaItem.topic}}</span>
+                    <small>
+                        - {{agendaItem.start_time|date('g:i', this.page.timezone)}}{% if agendaItem.end_time %} to {{agendaItem.end_time|date('g:i', this.page.timezone)}}{% endif %}
+                    </small>
+                    
+                    <br />
+                    
+                    {% if agendaItem.details %} <i>{{agendaItem.details}}</i> {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if event.track_sign_ups %}
+        <form data-request="onSignUp" data-request-success="UIkit.notification('Sign up successful', 'success');">
+            <input name="name" />
+        </form>
+    {% endif %}
+
+</div>
+
+<script>
+
+</script>
