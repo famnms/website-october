@@ -68,3 +68,8 @@ tabs:
                         label: 'Approx. Minutes'
                         span: auto
                         type: number
+                    details:
+                        label: Details/Notes
+                        size: small
+                        span: full
+                        type: textarea
