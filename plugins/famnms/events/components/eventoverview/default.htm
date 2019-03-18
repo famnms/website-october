@@ -4,7 +4,7 @@
 		{% if event.event_type.is_public or __SELF__.backendUser %}
 			<div class="event">
 				<span class="uk-icon" uk-icon="icon: calendar; ratio: 3"></span>
-				<a href="/event/{{event['id']}}">
+				<a href="/event/{{event['id']}}" class="no-link-color">
 					{{event["title"]}} ({{event.event_type["short_name"]}})
 					<div class="date">{{event["start_time"]|date('M d, Y', __self__.property('timezone'))}}</div>
 				</a>

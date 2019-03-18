@@ -47,9 +47,14 @@ class EventDetail extends ComponentBase
             $new_item['topic'] = $item['topic'];
             $new_item['start_time'] = $time->toDateTimeString();
             $minutes = $item['num_minutes'];
-            $time = $time->addMinutes($minutes);
-            $new_item['end_time'] = $time->toDateTimeString();
+            if ($minutes) {
+                $time = $time->addMinutes($minutes);
+                $new_item['end_time'] = $time->toDateTimeString();
+            }
         }
+        $meeting_end = &$agenda_with_times[];
+        $meeting_end['topic'] = "(Estimated End Time)";
+        $meeting_end['start_time'] = $time->toDateTimeString();
         return $agenda_with_times;
     }
 }
