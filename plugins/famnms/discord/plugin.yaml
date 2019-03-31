@@ -1,0 +1,11 @@
+plugin:
+    name: 'famnms.discord::lang.plugin.name'
+    description: 'famnms.discord::lang.plugin.description'
+    author: FAMNMS
+    icon: oc-icon-comment
+    homepage: ''
+navigation:
+    discord-item:
+        label: Discord
+        url: famnms/discord
+        icon: icon-comment

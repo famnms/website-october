@@ -1,0 +1,3 @@
+fields:
+  webhook_url:
+    label: Webhook URL

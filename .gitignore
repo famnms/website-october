@@ -4,6 +4,7 @@ modules/*
 config/*
 storage/*
 vendor/*
+**/vendor
 index.php
 plugins/*
 !plugins/famnms/

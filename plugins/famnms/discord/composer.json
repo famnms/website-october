@@ -1,0 +1,7 @@
+{
+    "name": "famnms/oc-discord-plugin",
+    "type": "october-plugin",
+    "require": {
+        "nopjmp/discord-webhooks": "*"
+    }
+}
