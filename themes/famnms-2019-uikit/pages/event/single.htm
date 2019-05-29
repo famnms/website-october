@@ -4,7 +4,6 @@ layout = "default"
 is_hidden = 0
 
 [eventDetail eventDetail2]
-timezone = "America/Detroit"
 event_id = "{{ :id }}"
 ==
 <?php
@@ -47,7 +46,7 @@ function onSignUp() {
         </div>
         {% if event.agenda %}
             <div id="event-agenda" class="uk-width-1-3@m">
-                <h3>Agenda</h3>
+                <h3><a href="{{'event/agendaView'|page}}">Agenda</a></h3>
                 {% for agendaItem in eventDetail2.agenda_times() %}
                     <div>{{agendaItem.topic}} <small>- {{agendaItem.start_time|date('g:i', this.page.timezone)}}{% if agendaItem.end_time %} to {{agendaItem.end_time|date('g:i', this.page.timezone)}}{% endif %}</small></div>
                 {% endfor %}
@@ -60,7 +59,3 @@ function onSignUp() {
         {% endif %}
     </div>
 </div>
-
-<script>
-
-</script>

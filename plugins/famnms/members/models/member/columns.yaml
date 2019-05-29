@@ -1,0 +1,13 @@
+columns:
+    first_name:
+        label: first_name
+        type: text
+    last_name:
+        label: last_name
+        type: text
+    public_profile:
+        label: public_profile
+        type: text
+    email_address:
+        label: email_address
+        type: text

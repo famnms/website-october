@@ -1,4 +1,8 @@
+{##}
 <div class="upcoming-events">
+	{% if __SELF__.backenduser %}
+		<div uk-alert>You're logged in to the backend, so you may be seeing events other users can't</div>
+	{% endif %}
 	{% if __SELF__.upcomingEvents is not empty %}
 		{% for event in __SELF__.upcomingEvents %}
 		{% if event.event_type.is_public or __SELF__.backendUser %}

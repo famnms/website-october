@@ -24,6 +24,7 @@ fields:
         span: auto
         required: 1
         type: datepicker
+        dependsOn: start_time
     description:
         label: Description
         size: large

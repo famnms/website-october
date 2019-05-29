@@ -1,0 +1,10 @@
+name: Sitewide Notifications
+form: $/famnms/sitewidenotification/models/sitewidenotification/fields.yaml
+modelClass: Famnms\SitewideNotification\Models\SitewideNotification
+defaultRedirect: famnms/sitewidenotification
+create:
+    redirect: 'famnms/sitewidenotification/index/update/:id'
+    redirectClose: famnms/sitewidenotification
+update:
+    redirect: famnms/sitewidenotification
+    redirectClose: famnms/sitewidenotification

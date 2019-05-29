@@ -1,3 +1,4 @@
+[activeNotifications]
 ==
 <?php
 function onStart() {
@@ -36,12 +37,14 @@ function onStart() {
         <script type="text/javascript" src="{{ mix('/public/js/manifest.js') }}"></script>
         <script type="text/javascript" src="{{ mix('/public/js/vendor.js') }}"></script>
     </head>
-    <body class="theme-{{ this.theme.id }} page-{{ this.page.id }} {{ (sitewide_notitication) ? "sitewide-notif": "" }}">
-        {% if sitewide_notification %}
+    <body class="theme-{{ this.theme.id }} page-{{ this.page.id }} {{ (notifications) ? "sitewide-notif": "" }}">
+        {% if notifications %}
             <!-- Sitewide Notification -->
-            <div class="sitewide-notification {{sitewide_notification.severity}}">
-                <p>{{sitewide_notification.message}}</p>
-            </div>
+            {% for notif in notifications %}
+                <div class="sitewide-notification uk-animation-slide-top-small {{notif.severity}}">
+                    {{notif.text|raw}}
+                </div>
+            {% endfor %}
         {% endif %}
         <header class="main-header">
             {% partial "nav" %}

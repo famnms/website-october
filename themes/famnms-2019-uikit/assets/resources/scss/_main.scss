@@ -7,3 +7,64 @@ a.no-link-color {
         color: $global-color;
     }
 }
+
+$sitewide-notification-height: 60px;
+
+body.sitewide-notif {
+    nav.navbar-fixed-top {
+        top: $sitewide-notification-height;
+    }
+}
+
+.sitewide-notification {
+    display: flex;
+    text-align: center;
+    padding: 0 5%;
+    height: $sitewide-notification-height;
+    z-index: 10;
+    color: #222;
+    
+    a {
+         color: #222;
+         text-decoration: underline;
+         &:hover {
+             color: #222;
+         }
+    }
+}
+
+.sitewide-notification.high {
+    background: #FF4136;
+    //color: $global-color;
+    
+    /*a {
+         color: $global-color;
+         text-decoration: underline;
+         &:hover {
+             color: $global-color;
+         }
+    }*/
+}
+
+.sitewide-notification.medium {
+    background: #FF851B;
+}
+
+.sitewide-notification.low {
+    color: $global-color;
+    a {
+         color: $global-color;
+         text-decoration: underline;
+         &:hover {
+             color: $global-color;
+         }
+    }
+}
+
+.sitewide-notification p {
+    margin: auto;
+}
+
+.site-notif-pad {
+    padding-bottom: $sitewide-notification-height;
+}

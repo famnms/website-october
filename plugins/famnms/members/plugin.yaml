@@ -4,3 +4,8 @@ plugin:
     author: FAMNMS
     icon: oc-icon-users
     homepage: ''
+navigation:
+    members:
+        label: Members
+        url: famnms/members/members
+        icon: icon-users

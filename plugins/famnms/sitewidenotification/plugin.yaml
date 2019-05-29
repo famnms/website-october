@@ -1,0 +1,6 @@
+plugin:
+    name: 'famnms.sitewidenotification::lang.plugin.name'
+    description: 'famnms.sitewidenotification::lang.plugin.description'
+    author: FAMNMS
+    icon: oc-icon-exclamation
+    homepage: ''

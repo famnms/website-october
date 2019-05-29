@@ -1,6 +1,4 @@
 <?php namespace Famnms\Events;
-//namespace Famnms\Events\Components;
-//use Famnms\Events\Components\EventOverview;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -34,5 +32,9 @@ class Plugin extends PluginBase
 
     public function registerSettings()
     {
+    }
+
+    public function boot() {
+        // \App::register('Barryvdh\DomPDF\ServiceProvider::class');
     }
 }

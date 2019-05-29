@@ -1,0 +1,26 @@
+title: Sitewide Notifications
+modelClass: Famnms\SitewideNotification\Models\SitewideNotification
+list: $/famnms/sitewidenotification/models/sitewidenotification/columns.yaml
+recordUrl: 'famnms/sitewidenotification/index/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+filter:
+    scopes:
+        active:
+            label: Active Only
+            type: checkbox
+            default: 0
+            conditions: start_time <= date('now') and end_time >= date('now')
+        severity:
+            label: Severity
+            conditions: severity in (:filtered)
+            options:
+                low: Low
+                medium: Medium
+                high: High

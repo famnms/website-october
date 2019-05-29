@@ -36,3 +36,6 @@
 1.0.13:
     - 'Created table famnms_events_attendees'
     - builder_table_create_famnms_events_attendees.php
+1.0.14:
+    - 'Updated table famnms_events_event'
+    - builder_table_update_famnms_events_event_7.php

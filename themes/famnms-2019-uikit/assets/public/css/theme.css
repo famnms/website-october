@@ -12026,3 +12026,57 @@ a.no-link-color {
 a.no-link-color:hover {
   color: #ccc;
 }
+
+body.sitewide-notif nav.navbar-fixed-top {
+  top: 60px;
+}
+
+.sitewide-notification {
+  display: flex;
+  text-align: center;
+  padding: 0 5%;
+  height: 60px;
+  z-index: 10;
+  color: #222;
+}
+.sitewide-notification a {
+  color: #222;
+  text-decoration: underline;
+}
+.sitewide-notification a:hover {
+  color: #222;
+}
+
+.sitewide-notification.high {
+  background: #FF4136;
+  /*a {
+       color: $global-color;
+       text-decoration: underline;
+       &:hover {
+           color: $global-color;
+       }
+  }*/
+}
+
+.sitewide-notification.medium {
+  background: #FF851B;
+}
+
+.sitewide-notification.low {
+  color: #ccc;
+}
+.sitewide-notification.low a {
+  color: #ccc;
+  text-decoration: underline;
+}
+.sitewide-notification.low a:hover {
+  color: #ccc;
+}
+
+.sitewide-notification p {
+  margin: auto;
+}
+
+.site-notif-pad {
+  padding-bottom: 60px;
+}

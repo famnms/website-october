@@ -1,11 +1,11 @@
-<?php namespace Famnms\Members\Models;
+<?php namespace Famnms\SitewideNotification\Models;
 
 use Model;
 
 /**
  * Model
  */
-class Member extends Model
+class SitewideNotification extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
@@ -17,14 +17,7 @@ class Member extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'famnms_members_member';
-
-    /**
-     * Relations
-     */
-    public $hasOne = [
-        'user' => 'Rainlab\User\Models\User'
-    ];
+    public $table = 'famnms_sitewidenotification_notification';
 
     /**
      * @var array Validation rules

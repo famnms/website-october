@@ -1,0 +1,15 @@
+fields:
+    first_name:
+        label: 'First Name'
+        span: auto
+        type: text
+    last_name:
+        label: 'Last Name'
+        span: auto
+        type: text
+    user:
+        label: User
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

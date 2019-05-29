@@ -1,0 +1,21 @@
+columns:
+    text:
+        label: Text
+        type: text
+        format: '%20s'
+    start_time:
+        label: Starts
+        type: datetime
+        sortable: true
+    end_time:
+        label: Ends
+        type: datetime
+        sortable: true
+    severity:
+        Label: Severity
+        type: text
+    is_active:
+        label: Active?
+        sortable: true
+        type: switch
+        select: start_time <= date('now') and end_time >= date('now')

@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table famnms_sitewidenotification_notification'
+    - builder_table_create_famnms_sitewidenotification_notification.php
+1.0.3:
+    - 'Updated table famnms_sitewidenotification_notification'
+    - builder_table_update_famnms_sitewidenotification_notification.php

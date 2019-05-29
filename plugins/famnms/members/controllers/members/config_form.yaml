@@ -1,0 +1,10 @@
+name: Members
+form: $/famnms/members/models/member/fields.yaml
+modelClass: Famnms\Members\Models\Member
+defaultRedirect: famnms/members/members
+create:
+    redirect: 'famnms/members/members/update/:id'
+    redirectClose: famnms/members/members
+update:
+    redirect: famnms/members/members
+    redirectClose: famnms/members/members
